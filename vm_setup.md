@@ -1,10 +1,13 @@
 # Virtual Machine Setup
 
+> [!IMPORTANT]
+> These instructions are specific to Ubuntu 24.04 LTS
+
 ## Initialize
 
 ```bash
 sudo apt update && sudo apt upgrade
-sudo apt install vim
+(optional) sudo apt install vim
 ```
 
 ## Set up SSH key
@@ -17,31 +20,32 @@ ssh-add ~/.ssh/<private key>
 
 ## Set up Git
 
-- Add public key to GitHub as authentication and signing key
+- Add public key to GitHub as authentication and (optional) signing key
 
 ```bash
 sudo apt install git
 git config --global user.name "<username>"
 git config --global user.email "<email>"
-git config --global commit.gpgsign true
-git config --global gpg.format ssh
-git config --global user.signingkey ~/.ssh/<key>.pub
+(optional) git config --global commit.gpgsign true
+(optional) git config --global gpg.format ssh
+(optional) git config --global user.signingkey ~/.ssh/<public key>
 ```
 
 ## Download Odoo
 
 ```bash
-git clone git@github.com:odoo/odoo.git --depth 1 --branch 17.0 --single-branch ./odoo17/
+(full repo) git clone git@github.com:odoo/odoo.git
+(single branch) git clone git@github.com:odoo/odoo.git --depth 1 --branch <v> --single-branch ./odoo<v>/
 ```
 
 ## Set up Python
 
 ```bash
-sudo apt install python3.12-venv
+sudo apt install python3.xx-venv
 cd ./odoo<v>/
-python3 -m venv venv
+python3.xx -m venv venv
 source venv/bin/activate
-pip install --upgrade pip
+(venv) pip install --upgrade pip
 ```
 
 ## Set up PostgreSQL
