@@ -24,6 +24,8 @@ sudo apt install git
 git config --global user.name "<username>"
 git config --global user.email "<email>"
 git config --global commit.gpgsign true
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/<key>.pub
 ```
 
 ## Download Odoo
