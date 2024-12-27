@@ -8,6 +8,7 @@
 ```bash
 sudo apt update && sudo apt upgrade
 (optional) sudo apt install vim
+(optional) sudo snap install code --classic
 ```
 
 ## Set up SSH key
