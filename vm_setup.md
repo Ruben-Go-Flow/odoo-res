@@ -64,3 +64,12 @@ sudo apt install python3-pip libldap2-dev libpq-dev libsasl2-dev
 (venv) pip install -r requirements.txt
 sudo apt install wkhtmltopdf
 ```
+
+## Set up VSCode to Recognize Odoo
+
+Open workspace settings
+```
+CTRL + SHIFT + P
+>> Preferences: Open Workspace Settings (JSON)
+>>>> "python.analysis.extraPaths": ["/path/to/odoo/source"]
+```
