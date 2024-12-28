@@ -64,11 +64,3 @@ sudo apt install python3-pip libldap2-dev libpq-dev libsasl2-dev
 (venv) pip install -r requirements.txt
 sudo apt install wkhtmltopdf
 ```
-
-## Running Odoo
-
-```bash
-(venv) python odoo-bin --addons-path=addons -d $USER <-i base>(on first run)
-```
-
-- Open http://localhost:8069 in a web browser and login with admin:admin
