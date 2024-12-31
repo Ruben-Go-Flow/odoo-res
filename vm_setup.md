@@ -8,6 +8,7 @@
 ```bash
 sudo apt update && sudo apt upgrade
 (optional) sudo apt install vim
+(optional) sudo snap install code --classic
 ```
 
 ## Set up SSH key
@@ -56,6 +57,12 @@ sudo -u postgres createuser -d -R -S $USER
 createdb $USER
 ```
 
+### Initialize DB without demo data
+
+```bash
+(venv) python odoo-bin -i base -d $USER --without-demo all
+```
+
 ## Install Dependencies
 
 ```bash
@@ -64,10 +71,11 @@ sudo apt install python3-pip libldap2-dev libpq-dev libsasl2-dev
 sudo apt install wkhtmltopdf
 ```
 
-## Running Odoo
+## Set up VSCode to Recognize Odoo
 
-```bash
-(venv) python odoo-bin --addons-path=addons -d $USER <-i base>(on first run)
+Open workspace settings
 ```
-
-- Open http://localhost:8069 in a web browser and login with admin:admin
+CTRL + SHIFT + P
+>> Preferences: Open Workspace Settings (JSON)
+>>>> "python.analysis.extraPaths": ["/path/to/odoo/source"]
+```
