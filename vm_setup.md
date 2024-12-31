@@ -57,6 +57,12 @@ sudo -u postgres createuser -d -R -S $USER
 createdb $USER
 ```
 
+### Initialize DB without demo data
+
+```bash
+(venv) python odoo-bin -i base -d $USER --without-demo all
+```
+
 ## Install Dependencies
 
 ```bash
